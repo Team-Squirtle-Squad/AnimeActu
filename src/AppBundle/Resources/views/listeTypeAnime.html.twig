@@ -1,0 +1,4 @@
+{% for typeAnime in typesAnimes %}
+    {{ typeAnime.libelleTypeAnime }}
+    <a href="{{ path('formulaire_type_anime_update',{id: typeAnime.id}) }}">modifier</a><br>
+{% endfor %}
