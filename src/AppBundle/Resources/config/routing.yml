@@ -21,3 +21,15 @@ formulaire_type_anime_update:
 liste_type_anime:
   path: /listeTypeAnime
   defaults: { _controller: "AppBundle:Anime:listeTypeAnime" }
+
+liste_theme:
+  path: /listeTheme
+  defaults: { _controller: "AppBundle:Anime:listeTheme" }
+
+formulaire_theme:
+  path: /formulaireTheme
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
+
+formulaire_theme_update:
+  path: /formulaireTheme/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
