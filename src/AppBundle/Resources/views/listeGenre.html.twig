@@ -1,0 +1,4 @@
+{% for genre in genres %}
+    {{ genre.libelleGenre }}
+    <a href="{{ path('formulaire_genre_update',{id: genre.id}) }}">modifier</a><br>
+{% endfor %}
