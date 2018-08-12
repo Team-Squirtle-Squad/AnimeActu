@@ -1,0 +1,11 @@
+formulaire_genre:
+  path: /formulaireGenre
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
+
+formulaire_genre_update:
+  path: /formulaireGenre/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
+
+liste_genre:
+  path: /listeGenre
+  defaults: { _controller: "AppBundle:Anime:listeGenre" }
