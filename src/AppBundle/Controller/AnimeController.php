@@ -67,7 +67,7 @@ class AnimeController extends Controller
             return $this->redirectToRoute('liste_type_anime');
         }
 
-        return $this->render('@App/formulaireTypeAnime.html.twig', array('form' => $form->createView()));
+        return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
     }
 
 }
