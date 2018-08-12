@@ -66,7 +66,6 @@ class AnimeController extends Controller
             $this->addFlash('info', 'L\'ajout de votre genre : "' . $typeAnime->getLibelleTypeAnime() . '" à été validé');
             return $this->redirectToRoute('liste_type_anime');
         }
-
         return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
     }
 
