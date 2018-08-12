@@ -10,13 +10,17 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Genre;
+use AppBundle\Entity\TypeAnime;
 use AppBundle\Form\GenreType;
+use AppBundle\Form\TypeAnimeType;
 use AppBundle\Services\GenreService;
+use AppBundle\Services\TypeAnimeService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class AnimeController extends Controller
 {
+    // Genre
     public function listeGenreAction(GenreService $genreService){
         return $this->render('@App/listeGenre.html.twig', array("genres" => $genreService->getAllGenre()));
     }
@@ -41,5 +45,29 @@ class AnimeController extends Controller
         return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
     }
 
+    // Type d'anime
+    public function listeTypeAnimeAction(TypeAnimeService $typeAnimeService){
+        return $this->render('@App/listeTypeAnime.html.twig', array("typesAnimes" => $typeAnimeService->getAllTypeAnime()));
+    }
+
+    public function addAndUpdateTypeAnimeAction(Request $request, TypeAnimeService $typeAnimeService, $id = null)
+    {
+        if ($id === null) {
+            $typeAnime = new TypeAnime();
+        } else {
+            $typeAnime = $typeAnimeService->getTypeAnime($id);
+        }
+        $form = $this->createForm(TypeAnimeType::class, $typeAnime);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $typeAnimeService->save($typeAnime);
+            $this->addFlash('info', 'L\'ajout de votre genre : "' . $typeAnime->getLibelleTypeAnime() . '" à été validé');
+            return $this->redirectToRoute('liste_type_anime');
+        }
+
+        return $this->render('@App/formulaireTypeAnime.html.twig', array('form' => $form->createView()));
+    }
 
 }
