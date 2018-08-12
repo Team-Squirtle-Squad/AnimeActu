@@ -10,18 +10,18 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Genre;
-use AppBundle\Entity\TypeAnime;
+use AppBundle\Entity\Theme;
 use AppBundle\Form\GenreType;
-use AppBundle\Form\TypeAnimeType;
+use AppBundle\Form\ThemeType;
 use AppBundle\Services\GenreService;
-use AppBundle\Services\TypeAnimeService;
+use AppBundle\Services\ThemeService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class AnimeController extends Controller
 {
-    // Genre
-    public function listeGenreAction(GenreService $genreService){
+    public function listeGenreAction(GenreService $genreService)
+    {
         return $this->render('@App/listeGenre.html.twig', array("genres" => $genreService->getAllGenre()));
     }
 
@@ -45,28 +45,30 @@ class AnimeController extends Controller
         return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
     }
 
-    // Type d'anime
-    public function listeTypeAnimeAction(TypeAnimeService $typeAnimeService){
-        return $this->render('@App/listeTypeAnime.html.twig', array("typesAnimes" => $typeAnimeService->getAllTypeAnime()));
+
+    public function listeThemeAction(ThemeService $themeService)
+    {
+        return $this->render('@App/listeTheme.html.twig', array("themes" => $themeService->getAllTheme()));
     }
 
-    public function addAndUpdateTypeAnimeAction(Request $request, TypeAnimeService $typeAnimeService, $id = null)
+    public function addAndUpdateThemeAction(Request $request, ThemeService $themeService, $id = null)
     {
         if ($id === null) {
-            $typeAnime = new TypeAnime();
+            $theme = new Theme();
         } else {
-            $typeAnime = $typeAnimeService->getTypeAnime($id);
+            $theme = $themeService->getTheme($id);
         }
-        $form = $this->createForm(TypeAnimeType::class, $typeAnime);
+        $form = $this->createForm(ThemeType::class, $theme);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $typeAnimeService->save($typeAnime);
-            $this->addFlash('info', 'L\'ajout de votre genre : "' . $typeAnime->getLibelleTypeAnime() . '" à été validé');
-            return $this->redirectToRoute('liste_type_anime');
+            $themeService->save($theme);
+            $this->addFlash('info', 'L\'ajout de votre Thème : "' . $theme->getLibelleTheme() . '" à été validé');
+            return $this->redirectToRoute('liste_theme');
         }
+
         return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
     }
+
 
 }
