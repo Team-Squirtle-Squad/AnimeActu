@@ -9,3 +9,15 @@ formulaire_genre_update:
 liste_genre:
   path: /listeGenre
   defaults: { _controller: "AppBundle:Anime:listeGenre" }
+
+liste_theme:
+  path: /listeTheme
+  defaults: { _controller: "AppBundle:Anime:listeTheme" }
+
+formulaire_theme:
+  path: /formulaireTheme
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
+
+formulaire_theme_update:
+  path: /formulaireTheme/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }

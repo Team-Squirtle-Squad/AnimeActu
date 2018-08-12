@@ -1,0 +1,4 @@
+{% for theme in themes %}
+    {{ theme.libelleTheme }}
+    <a href="{{ path('formulaire_theme_update',{id: theme.id}) }}">Modifier</a><br>
+{%  endfor %}
