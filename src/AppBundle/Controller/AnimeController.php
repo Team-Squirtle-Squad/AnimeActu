@@ -23,6 +23,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AnimeController extends Controller
 {
+    //Home
+    public function homeAction(){
+        return $this->render('@App/home.html.twig');
+    }
+
+
     // Genre //
     public function listeGenreAction(GenreService $genreService)
     {
@@ -47,16 +53,20 @@ class AnimeController extends Controller
             return $this->redirectToRoute('liste_genre');
         }
 
-        return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
+        return $this->render('@App/formulaireGenreThemeType.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteGenreAction(GenreService $genreService, $id)
+    {
+        $genreService->delete($genreService->getGenre($id));
+        return $this->redirectToRoute('liste_genre');
     }
     // Fin Genre //
 
     // Type d'anime //
     public function listeTypeAnimeAction(TypeAnimeService $typeAnimeService)
     {
-        return $this->render(
-            '@App/listeTypeAnime.html.twig',
-            array("typesAnimes" => $typeAnimeService->getAllTypeAnime())
+        return $this->render('@App/listeTypeAnime.html.twig', array("typesAnimes" => $typeAnimeService->getAllTypeAnime())
         );
     }
 
@@ -78,7 +88,13 @@ class AnimeController extends Controller
             return $this->redirectToRoute('liste_type_anime');
         }
 
-        return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
+        return $this->render('@App/formulaireGenreThemeType.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteTypeAnimeAction(TypeAnimeService $typeAnimeService, $id)
+    {
+        $typeAnimeService->delete($typeAnimeService->getTypeAnime($id));
+        return $this->redirectToRoute('liste_type_anime');
     }
     // Fin Type d'anime //
 
@@ -86,7 +102,7 @@ class AnimeController extends Controller
 
     public function listeThemeAction(ThemeService $themeService)
     {
-        return $this->render('@App/listeGenre.html.twig', array("themes" => $themeService->getAllTheme()));
+        return $this->render('@App/listeTheme.html.twig', array("themes" => $themeService->getAllTheme()));
     }
 
     public function addAndUpdateThemeAction(Request $request, ThemeService $themeService, $id = null)
@@ -106,7 +122,13 @@ class AnimeController extends Controller
             return $this->redirectToRoute('liste_theme');
         }
 
-        return $this->render('@App/formulaireGenre.html.twig', array('form' => $form->createView()));
+        return $this->render('@App/formulaireGenreThemeType.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteThemeAction(ThemeService $themeService, $id)
+    {
+        $themeService->delete($themeService->getTheme($id));
+        return $this->redirectToRoute('liste_theme');
     }
     // Fin Thème //
 

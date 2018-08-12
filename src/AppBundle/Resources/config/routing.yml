@@ -1,3 +1,7 @@
+home:
+  path: /
+  defaults: { _controller: "AppBundle:Anime:home" }
+
 formulaire_genre:
   path: /formulaireGenre
   defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
@@ -9,6 +13,10 @@ formulaire_genre_update:
 liste_genre:
   path: /listeGenre
   defaults: { _controller: "AppBundle:Anime:listeGenre" }
+
+delete_genre:
+  path: /deleteGenre/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteGenre"}
 
 formulaire_type_anime:
   path: /formulaireTypeAnime
@@ -22,6 +30,10 @@ liste_type_anime:
   path: /listeTypeAnime
   defaults: { _controller: "AppBundle:Anime:listeTypeAnime" }
 
+delete_type_anime:
+  path: /deleteTypeAnime/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteTypeAnime" }
+
 liste_theme:
   path: /listeTheme
   defaults: { _controller: "AppBundle:Anime:listeTheme" }
@@ -33,3 +45,7 @@ formulaire_theme:
 formulaire_theme_update:
   path: /formulaireTheme/{id}
   defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
+
+delete_theme:
+  path: /deleteTheme/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteTheme" }

@@ -1,4 +1,27 @@
-{% for genre in genres %}
-    {{ genre.libelleGenre }}
-    <a href="{{ path('formulaire_genre_update',{id: genre.id}) }}">modifier</a><br>
-{% endfor %}
+{% extends "@App/layout.html.twig" %}
+
+{% block body %}
+
+    <div class="container" style="margin-top: 50px;">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for genre in genres %}
+                <tr>
+                    <td>{{ genre.libelleGenre }}</td>
+                    <td><a href="{{ path('formulaire_genre_update',{id: genre.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('delete_genre',{id: genre.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('formulaire_genre') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter</a>
+
+    </div>
+{% endblock %}

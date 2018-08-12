@@ -8,7 +8,6 @@
 
 namespace AppBundle\Services;
 
-
 use AppBundle\Entity\TypeAnime;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -29,13 +28,12 @@ class TypeAnimeService
         return $this->em->getRepository("AppBundle:TypeAnime")->findAll();
     }
 
-    public function save(TypeAnime $typeAnime)
-    {
+    public function save(TypeAnime $typeAnime) {
         $this->em->persist($typeAnime);
         $this->em->flush();
     }
 
-    public function delete(TypeAnimeService $typeAnime){
+    public function delete(TypeAnime $typeAnime){
         $this->em->remove($typeAnime);
         $this->em->flush();
     }
