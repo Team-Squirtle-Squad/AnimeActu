@@ -24,7 +24,8 @@ use Symfony\Component\HttpFoundation\Request;
 class AnimeController extends Controller
 {
     // Genre //
-    public function listeGenreAction(GenreService $genreService){
+    public function listeGenreAction(GenreService $genreService)
+    {
         return $this->render('@App/listeGenre.html.twig', array("genres" => $genreService->getAllGenre()));
     }
 
@@ -41,7 +42,8 @@ class AnimeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $genreService->save($genre);
-            $this->addFlash('info', 'L\'ajout de votre genre : "' . $genre->getLibelleGenre() . '" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre genre : "'.$genre->getLibelleGenre().'" à été validé');
+
             return $this->redirectToRoute('liste_genre');
         }
 
@@ -50,8 +52,12 @@ class AnimeController extends Controller
     // Fin Genre //
 
     // Type d'anime //
-    public function listeTypeAnimeAction(TypeAnimeService $typeAnimeService){
-        return $this->render('@App/listeTypeAnime.html.twig', array("typesAnimes" => $typeAnimeService->getAllTypeAnime()));
+    public function listeTypeAnimeAction(TypeAnimeService $typeAnimeService)
+    {
+        return $this->render(
+            '@App/listeTypeAnime.html.twig',
+            array("typesAnimes" => $typeAnimeService->getAllTypeAnime())
+        );
     }
 
     public function addAndUpdateTypeAnimeAction(Request $request, TypeAnimeService $typeAnimeService, $id = null)
@@ -67,7 +73,8 @@ class AnimeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $typeAnimeService->save($typeAnime);
-            $this->addFlash('info', 'L\'ajout de votre genre : "' . $typeAnime->getLibelleTypeAnime() . '" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre genre : "'.$typeAnime->getLibelleTypeAnime().'" à été validé');
+
             return $this->redirectToRoute('liste_type_anime');
         }
 
@@ -76,6 +83,12 @@ class AnimeController extends Controller
     // Fin Type d'anime //
 
     // Theme //
+
+    public function listeThemeAction(ThemeService $themeService)
+    {
+        return $this->render('@App/listeGenre.html.twig', array("themes" => $themeService->getAllTheme()));
+    }
+
     public function addAndUpdateThemeAction(Request $request, ThemeService $themeService, $id = null)
     {
         if ($id === null) {
@@ -88,7 +101,8 @@ class AnimeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $themeService->save($theme);
-            $this->addFlash('info', 'L\'ajout de votre Thème : "' . $theme->getLibelleTheme() . '" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre Thème : "'.$theme->getLibelleTheme().'" à été validé');
+
             return $this->redirectToRoute('liste_theme');
         }
 
@@ -96,6 +110,8 @@ class AnimeController extends Controller
     }
     // Fin Thème //
 
-
+    // Anime //
+    //$form = $this->createForm(AnimeType::class, $anime);
+    // Fin Anime
 
 }
