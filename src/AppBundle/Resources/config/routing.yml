@@ -10,6 +10,18 @@ liste_genre:
   path: /listeGenre
   defaults: { _controller: "AppBundle:Anime:listeGenre" }
 
+formulaire_type_anime:
+  path: /formulaireTypeAnime
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTypeAnime" }
+
+formulaire_type_anime_update:
+  path: /formulaireTypeAnime/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateTypeAnime" }
+
+liste_type_anime:
+  path: /listeTypeAnime
+  defaults: { _controller: "AppBundle:Anime:listeTypeAnime" }
+
 liste_theme:
   path: /listeTheme
   defaults: { _controller: "AppBundle:Anime:listeTheme" }
