@@ -10,6 +10,7 @@ namespace AppBundle\Services;
 
 use AppBundle\Entity\Anime;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class AnimeService
 {
@@ -45,5 +46,11 @@ class AnimeService
     public function delete(Anime $anime) {
         $this->em->remove($anime);
         $this->em->flush();
+    }
+
+    public function upload(UploadedFile $file, $paramDir){
+        $fileName = md5(uniqid()).'.'.$file->guessExtension();
+        $file->move($paramDir, $fileName);
+        return $fileName;
     }
 }

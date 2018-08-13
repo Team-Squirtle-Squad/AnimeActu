@@ -9,6 +9,7 @@ use AppBundle\Entity\TypeAnime;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +24,7 @@ class AnimeType extends AbstractType
                 'attr' => array('style' => 'color: red')])
             ->add('synopsis', TextType::class, [
                 'label' => 'Synopsis'])
-            ->add('couverture', TextType::class,[
+            ->add('couverture', FileType::class,[
                 'label' => 'Couverture'])
             ->add('genres', EntityType::class, array(
                 'class'=>Genre::class,
@@ -34,7 +35,7 @@ class AnimeType extends AbstractType
                 'class'=>TypeAnime::class,
                 'choice_label'=>'libelle_type_anime',
                 'multiple'=>false,
-                'expanded'=>true))
+                'expanded'=>false))
             ->add('themes', EntityType::class, array(
                 'class'=>Theme::class,
                 'choice_label'=>'libelle_theme',

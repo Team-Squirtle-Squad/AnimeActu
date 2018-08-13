@@ -148,11 +148,18 @@ class AnimeController extends Controller
         } else {
             $anime = $animeService->getAnime($id);
         }
+        $photoTmp = $anime->getCouverture();
+        $anime->setCouverture(null);
         $form = $this->createForm(AnimeType::class, $anime);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+            $file = $anime->getCouverture();
+            if ($file) {
+                $anime->setCouverture($animeService->upload($file, $this->getParameter('images_directory')));
+            } else {
+                $anime->setCouverture($photoTmp);
+            }
             $animeService->save($anime);
             $this->addFlash('info', 'L\'ajout de votre anime : "'.$anime->getTitre().'" à été validé');
 
@@ -163,6 +170,8 @@ class AnimeController extends Controller
     }
 
     public function deleteAnimeAction(AnimeService $animeService, $id) {
+        $anime = $animeService->getAnime($id);
+        unlink($this->getParameter('images_directory') . "/". $anime->getCouverture());
         $animeService->delete($animeService->getAnime($id));
         return $this->redirectToRoute('liste_anime');
     }

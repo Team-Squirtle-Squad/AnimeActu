@@ -6,9 +6,9 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Couverture</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Synopsis</th>
-                <th scope="col">Couverture</th>
                 <th scope="col">Genres</th>
                 <th scope="col">Type Anime</th>
                 <th scope="col">Themes</th>
@@ -20,9 +20,10 @@
             <tbody>
             {% for anime in animes %}
                 <tr>
+
+                    <td><img class="img-fluid" style="width: 10rem" src="images/cover/{{ anime.couverture }}"></td>
                     <td>{{ anime.titre }}</td>
                     <td>{{ anime.synopsis }}</td>
-                    <td>{{ anime.couverture }}</td>
                     <td>{% for genre in anime.genres %}
                     {{ genre.libellegenre ~ ' ' }}
                     {% endfor %}
