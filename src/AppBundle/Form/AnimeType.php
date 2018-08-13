@@ -2,7 +2,10 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Genre;
+use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
+
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -18,10 +21,24 @@ class AnimeType extends AbstractType
             ->add('titre', TextType::class, [
                 'label' => 'Titre',
                 'attr' => array('style' => 'color: red')])
+            ->add('synopsis', TextType::class, [
+                'label' => 'Synopsis'])
+            ->add('couverture', TextType::class,[
+                'label' => 'Couverture'])
+            ->add('genres', EntityType::class, array(
+                'class'=>Genre::class,
+                'choice_label'=>'libelle_genre',
+                'multiple'=>true,
+                'expanded'=>true))
             ->add('typeAnime', EntityType::class, array(
                 'class'=>TypeAnime::class,
-                'choice_label'=>'mon type anime',
+                'choice_label'=>'libelle_type_anime',
                 'multiple'=>false,
+                'expanded'=>true))
+            ->add('themes', EntityType::class, array(
+                'class'=>Theme::class,
+                'choice_label'=>'libelle_theme',
+                'multiple'=>true,
                 'expanded'=>true));
     }
 
