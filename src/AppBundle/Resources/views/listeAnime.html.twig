@@ -1,0 +1,44 @@
+{% extends "@App/layout.html.twig" %}
+
+{% block body %}
+
+    <div class="container" style="margin-top: 50px;">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Synopsis</th>
+                <th scope="col">Couverture</th>
+                <th scope="col">Genres</th>
+                <th scope="col">Type Anime</th>
+                <th scope="col">Themes</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for anime in animes %}
+                <tr>
+                    <td>{{ anime.titre }}</td>
+                    <td>{{ anime.synopsis }}</td>
+                    <td>{{ anime.couverture }}</td>
+                    <td>{% for genre in anime.genres %}
+                    {{ genre.libellegenre ~ ' ' }}
+                    {% endfor %}
+                    </td>
+                    <td>{{ anime.typeAnime.libelleTypeAnime }}</td>
+                    <td>{% for theme in anime.themes %}
+                    {{ theme.libelleTheme ~ ' ' }}
+                    {% endfor %}
+                    </td>
+                    <td><a href="{{ path('formulaire_anime_update',{id: anime.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('delete_Anime',{id: anime.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('formulaire_anime') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter</a>
+
+    </div>
+{% endblock %}

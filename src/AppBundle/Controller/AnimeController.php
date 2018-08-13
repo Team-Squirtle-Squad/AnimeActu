@@ -9,12 +9,15 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Anime;
 use AppBundle\Entity\Genre;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
+use AppBundle\Form\AnimeType;
 use AppBundle\Form\GenreType;
 use AppBundle\Form\ThemeType;
 use AppBundle\Form\TypeAnimeType;
+use AppBundle\Services\AnimeService;
 use AppBundle\Services\GenreService;
 use AppBundle\Services\ThemeService;
 use AppBundle\Services\TypeAnimeService;
@@ -133,7 +136,37 @@ class AnimeController extends Controller
     // Fin Thème //
 
     // Anime //
-    //$form = $this->createForm(AnimeType::class, $anime);
+    public function listeAnimeAction(AnimeService $animeService)
+    {
+        return $this->render('@App/listeAnime.html.twig', array("animes" => $animeService->getAllAnime()));
+    }
+
+    public function addAndUpdateAnimeAction(Request $request, AnimeService $animeService, $id = null)
+    {
+        if ($id === null) {
+            $anime = new Anime();
+        } else {
+            $anime = $animeService->getAnime($id);
+        }
+        $form = $this->createForm(AnimeType::class, $anime);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $animeService->save($anime);
+            $this->addFlash('info', 'L\'ajout de votre anime : "'.$anime->getTitre().'" à été validé');
+
+            return $this->redirectToRoute('liste_anime');
+        }
+
+        return $this->render('@App/formulaireAnime.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteAnimeAction(AnimeService $animeService, $id) {
+        $animeService->delete($animeService->getAnime($id));
+        return $this->redirectToRoute('liste_anime');
+    }
     // Fin Anime
+
 
 }

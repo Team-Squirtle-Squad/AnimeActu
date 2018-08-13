@@ -56,7 +56,6 @@ class Anime
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TypeAnime")
-     * @ORM\Column(nullable=false)
      */
     private $typeAnime;
 
