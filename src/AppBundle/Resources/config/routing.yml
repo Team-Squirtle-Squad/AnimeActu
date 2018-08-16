@@ -73,3 +73,21 @@ formulaire_anime_update:
 delete_Anime:
   path: /deleteAnime/{id}
   defaults: { _controller: "AppBundle:Anime:deleteAnime" }
+
+
+
+liste_saison:
+  path: /listeSaison
+  defaults: { _controller: "AppBundle:Anime:listeSaison" }
+
+formulaire_saison:
+  path: /formulaireSaison
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateSaison" }
+
+formulaire_saison_update:
+  path: /formulaireSaison/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateSaison" }
+
+delete_Saison:
+  path: /deleteSaison/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteSaison" }

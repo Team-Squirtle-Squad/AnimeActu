@@ -11,14 +11,17 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Anime;
 use AppBundle\Entity\Genre;
+use AppBundle\Entity\Saison;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
 use AppBundle\Form\AnimeType;
 use AppBundle\Form\GenreType;
+use AppBundle\Form\SaisonType;
 use AppBundle\Form\ThemeType;
 use AppBundle\Form\TypeAnimeType;
 use AppBundle\Services\AnimeService;
 use AppBundle\Services\GenreService;
+use AppBundle\Services\SaisonService;
 use AppBundle\Services\ThemeService;
 use AppBundle\Services\TypeAnimeService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -177,5 +180,36 @@ class AnimeController extends Controller
     }
     // Fin Anime
 
+    // Saison //
+    public function listeSaisonAction(SaisonService $saisonService)
+    {
+        return $this->render('@App/listeSaison.html.twig', array("saisons" => $saisonService->getAllSaison()));
+    }
+
+    public function addAndUpdateSaisonAction(Request $request, SaisonService $saisonService, $id = null)
+    {
+        if ($id === null) {
+            $saison = new Saison();
+        } else {
+            $saison = $saisonService->getSaison($id);
+        }
+        $form = $this->createForm(SaisonType::class, $saison);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $saisonService->save($saison);
+            $this->addFlash('info', 'L\'ajout de votre saison : "'.$saison->getNbSaison().'" à été validé');
+
+            return $this->redirectToRoute('liste_saison');
+        }
+
+        return $this->render('@App/formulaireSaison.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteSaisonAction(SaisonService $saisonService, $id) {
+        $saisonService->delete($saisonService->getSaison($id));
+        return $this->redirectToRoute('liste_saison');
+    }
+    // Fin Saison
 
 }
