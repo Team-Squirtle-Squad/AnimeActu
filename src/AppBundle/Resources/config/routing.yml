@@ -4,6 +4,7 @@ home:
 
 
 
+
 formulaire_genre:
   path: /formulaireGenre
   defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
@@ -91,3 +92,21 @@ formulaire_saison_update:
 delete_Saison:
   path: /deleteSaison/{id}
   defaults: { _controller: "AppBundle:Anime:deleteSaison" }
+
+
+
+liste_episode:
+  path: /listeEpisode
+  defaults: { _controller: "AppBundle:Anime:listeEpisode" }
+
+formulaire_episode:
+  path: /formulaireEpisode
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateEpisode" }
+
+formulaire_episode_update:
+  path: /formulaireEpisode/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateEpisode" }
+
+delete_Episode:
+  path: /deleteEpisode/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteEpisode" }

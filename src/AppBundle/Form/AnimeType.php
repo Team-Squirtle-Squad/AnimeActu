@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Genre;
+use AppBundle\Entity\Saison;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
 
@@ -18,6 +19,7 @@ class AnimeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('titre', TextType::class, [
                 'label' => 'Titre',

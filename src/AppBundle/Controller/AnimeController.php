@@ -10,16 +10,19 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Anime;
+use AppBundle\Entity\Episode;
 use AppBundle\Entity\Genre;
 use AppBundle\Entity\Saison;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
 use AppBundle\Form\AnimeType;
+use AppBundle\Form\EpisodeType;
 use AppBundle\Form\GenreType;
 use AppBundle\Form\SaisonType;
 use AppBundle\Form\ThemeType;
 use AppBundle\Form\TypeAnimeType;
 use AppBundle\Services\AnimeService;
+use AppBundle\Services\EpisodeService;
 use AppBundle\Services\GenreService;
 use AppBundle\Services\SaisonService;
 use AppBundle\Services\ThemeService;
@@ -30,7 +33,8 @@ use Symfony\Component\HttpFoundation\Request;
 class AnimeController extends Controller
 {
     //Home
-    public function homeAction(){
+    public function homeAction()
+    {
         return $this->render('@App/home.html.twig');
     }
 
@@ -54,7 +58,7 @@ class AnimeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $genreService->save($genre);
-            $this->addFlash('info', 'L\'ajout de votre genre : "'.$genre->getLibelleGenre().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre genre : "' . $genre->getLibelleGenre() . '" à été validé');
 
             return $this->redirectToRoute('liste_genre');
         }
@@ -89,7 +93,7 @@ class AnimeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $typeAnimeService->save($typeAnime);
-            $this->addFlash('info', 'L\'ajout de votre genre : "'.$typeAnime->getLibelleTypeAnime().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre genre : "' . $typeAnime->getLibelleTypeAnime() . '" à été validé');
 
             return $this->redirectToRoute('liste_type_anime');
         }
@@ -123,7 +127,7 @@ class AnimeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $themeService->save($theme);
-            $this->addFlash('info', 'L\'ajout de votre Thème : "'.$theme->getLibelleTheme().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre Thème : "' . $theme->getLibelleTheme() . '" à été validé');
 
             return $this->redirectToRoute('liste_theme');
         }
@@ -164,7 +168,7 @@ class AnimeController extends Controller
                 $anime->setCouverture($photoTmp);
             }
             $animeService->save($anime);
-            $this->addFlash('info', 'L\'ajout de votre anime : "'.$anime->getTitre().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre anime : "' . $anime->getTitre() . '" à été validé');
 
             return $this->redirectToRoute('liste_anime');
         }
@@ -172,9 +176,10 @@ class AnimeController extends Controller
         return $this->render('@App/formulaireAnime.html.twig', array('form' => $form->createView()));
     }
 
-    public function deleteAnimeAction(AnimeService $animeService, $id) {
+    public function deleteAnimeAction(AnimeService $animeService, $id)
+    {
         $anime = $animeService->getAnime($id);
-        unlink($this->getParameter('images_directory') . "/". $anime->getCouverture());
+        unlink($this->getParameter('images_directory') . "/" . $anime->getCouverture());
         $animeService->delete($animeService->getAnime($id));
         return $this->redirectToRoute('liste_anime');
     }
@@ -198,7 +203,7 @@ class AnimeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $saisonService->save($saison);
-            $this->addFlash('info', 'L\'ajout de votre saison : "'.$saison->getNbSaison().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre saison : "' . $saison->getNbSaison() . '" à été validé');
 
             return $this->redirectToRoute('liste_saison');
         }
@@ -206,10 +211,44 @@ class AnimeController extends Controller
         return $this->render('@App/formulaireSaison.html.twig', array('form' => $form->createView()));
     }
 
-    public function deleteSaisonAction(SaisonService $saisonService, $id) {
+    public function deleteSaisonAction(SaisonService $saisonService, $id)
+    {
         $saisonService->delete($saisonService->getSaison($id));
         return $this->redirectToRoute('liste_saison');
     }
     // Fin Saison
 
+
+    // Episode //
+    public function listeEpisodeAction(EpisodeService $episodeService)
+    {
+        return $this->render('@App/listeEpisode.html.twig', array("episodes" => $episodeService->getAllEpisode()));
+    }
+
+    public function addAndUpdateEpisodeAction(Request $request, EpisodeService $episodeService, $id = null)
+    {
+        if ($id === null) {
+            $episode = new Episode();
+        } else {
+            $episode = $episodeService->getEpisode($id);
+        }
+        $form = $this->createForm(EpisodeType::class, $episode);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $episodeService->save($episode);
+            $this->addFlash('info', 'L\'ajout de votre episode : "' . $episode->getNumEpisode() . '" à été validé');
+
+            return $this->redirectToRoute('liste_episode');
+        }
+
+        return $this->render('@App/formulaireAnime.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteEpisodeAction(EpisodeService $episodeService, $id)
+    {
+        $episodeService->delete($episodeService->getEpisode($id));
+        return $this->redirectToRoute('liste_episode');
+    }
+    // Fin Episode.
 }
