@@ -110,3 +110,21 @@ formulaire_episode_update:
 delete_Episode:
   path: /deleteEpisode/{id}
   defaults: { _controller: "AppBundle:Anime:deleteEpisode" }
+
+
+
+liste_article:
+  path: /listeArticle
+  defaults: { _controller: "AppBundle:Anime:listeArticle" }
+
+formulaire_article:
+  path: /formulaireArticle
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateArticle" }
+
+formulaire_article_update:
+  path: /formulaireArticle/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateArticle" }
+
+delete_Article:
+  path: /deleteArticle/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteArticle" }
