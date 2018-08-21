@@ -1,0 +1,31 @@
+div .Contenu {
+    background-color: #FFAA5A;
+}
+
+div .Infos {
+    background-color: lightskyblue;
+    height: 10%;
+}
+
+div .Top {
+    background-color: #FFAA5A;
+}
+
+div .Topanime {
+    background-color: #FFAA5A;
+    height: 10%;
+}
+
+div .News {
+    background-color: #FFAA5A;
+    height: 20%;
+}
+
+div .Article {
+    background-color: #FFD25A;
+    height: 10%;
+}
+div .Vidéo {
+    background-color: #FFD25A;
+    height: 10%;
+}
