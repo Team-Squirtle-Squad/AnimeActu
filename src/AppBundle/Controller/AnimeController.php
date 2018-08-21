@@ -10,18 +10,21 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Anime;
+use AppBundle\Entity\Article;
 use AppBundle\Entity\Episode;
 use AppBundle\Entity\Genre;
 use AppBundle\Entity\Saison;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
 use AppBundle\Form\AnimeType;
+use AppBundle\Form\ArticleType;
 use AppBundle\Form\EpisodeType;
 use AppBundle\Form\GenreType;
 use AppBundle\Form\SaisonType;
 use AppBundle\Form\ThemeType;
 use AppBundle\Form\TypeAnimeType;
 use AppBundle\Services\AnimeService;
+use AppBundle\Services\ArticleService;
 use AppBundle\Services\EpisodeService;
 use AppBundle\Services\GenreService;
 use AppBundle\Services\SaisonService;
@@ -250,5 +253,38 @@ class AnimeController extends Controller
         $episodeService->delete($episodeService->getEpisode($id));
         return $this->redirectToRoute('liste_episode');
     }
-    // Fin Episode.
+    // Fin Episode //
+
+    // Article //
+    public function listeArticleAction(ArticleService $articleService)
+    {
+        return $this->render('@App/listeArticle.html.twig', array("articles" => $articleService->getAllArticle()));
+    }
+
+    public function addAndUpdateArticleAction(Request $request, ArticleService $articleService, $id = null)
+    {
+        if ($id === null) {
+            $article = new Article();
+        } else {
+            $article = $articleService->getArticle($id);
+        }
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articleService->save($article);
+            $this->addFlash('info', 'L\'ajout de votre article : "' . $article->getId() . '" à été validé');
+
+            return $this->redirectToRoute('liste_article');
+        }
+
+        return $this->render('@App/formulaireArticle.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteArticleAction(ArticleService $articleService, $id)
+    {
+        $articleService->delete($articleService->getArticle($id));
+        return $this->redirectToRoute('liste_article');
+    }
+    // Fin Article //
 }
