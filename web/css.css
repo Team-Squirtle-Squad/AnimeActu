@@ -1,5 +1,5 @@
 div .Contenu {
-    background-color: #FFAA5A;
+    background-color: #efb441;
 }
 
 div .Infos {
@@ -8,24 +8,43 @@ div .Infos {
 }
 
 div .Top {
-    background-color: #FFAA5A;
+    background-color: #efb441;
 }
 
 div .Topanime {
-    background-color: #FFAA5A;
+    background-color: #efb441;
     height: 10%;
+}
+
+div .Carousel {
+    background-color: #efb441;
+    height: 25%;
 }
 
 div .News {
-    background-color: #FFAA5A;
-    height: 20%;
+    background-color: #fbebcd;
+    height: 6rem;
+    border-bottom: 0.25rem solid white;
 }
 
-div .Article {
-    background-color: #FFD25A;
-    height: 10%;
+.Icones {
+    height: 5rem;
+    padding-top: 0.5rem;
 }
-div .Vidéo {
-    background-color: #FFD25A;
-    height: 10%;
+
+
+.h2bloc {
+    height: 3rem;
+    background-color: #efb441;
+    border-top: 0.25rem solid white;
+    border-bottom: 0.25rem solid white;
+}
+
+.h2text {
+    font-family: Oswald;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #424242;
+    text-align: center;
+    padding-top: 0.5rem;
 }
