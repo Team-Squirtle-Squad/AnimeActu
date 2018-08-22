@@ -128,3 +128,21 @@ formulaire_article_update:
 delete_Article:
   path: /deleteArticle/{id}
   defaults: { _controller: "AppBundle:Anime:deleteArticle" }
+
+
+
+liste_personnage:
+  path: /listePersonnage
+  defaults: { _controller: "AppBundle:Anime:listePersonnage" }
+
+formulaire_personnage:
+  path: /formulairePersonnage
+  defaults: { _controller: "AppBundle:Anime:addAndUpdatePersonnage" }
+
+formulaire_personnage_update:
+   path: /formulairePersonnage/{id}
+   defaults: { _controller: "AppBundle:Anime:addAndUpdatePersonnage" }
+
+delete_personnage:
+  path: /deletePersonnage/{id}
+  defaults: { _controller: "AppBundle:Anime:deletePersonnage" }
