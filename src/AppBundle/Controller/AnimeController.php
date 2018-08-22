@@ -13,6 +13,7 @@ use AppBundle\Entity\Anime;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Episode;
 use AppBundle\Entity\Genre;
+use AppBundle\Entity\Personnage;
 use AppBundle\Entity\Saison;
 use AppBundle\Entity\Theme;
 use AppBundle\Entity\TypeAnime;
@@ -20,6 +21,7 @@ use AppBundle\Form\AnimeType;
 use AppBundle\Form\ArticleType;
 use AppBundle\Form\EpisodeType;
 use AppBundle\Form\GenreType;
+use AppBundle\Form\PersonnageType;
 use AppBundle\Form\SaisonType;
 use AppBundle\Form\ThemeType;
 use AppBundle\Form\TypeAnimeType;
@@ -27,6 +29,7 @@ use AppBundle\Services\AnimeService;
 use AppBundle\Services\ArticleService;
 use AppBundle\Services\EpisodeService;
 use AppBundle\Services\GenreService;
+use AppBundle\Services\PersonnageService;
 use AppBundle\Services\SaisonService;
 use AppBundle\Services\ThemeService;
 use AppBundle\Services\TypeAnimeService;
@@ -287,4 +290,37 @@ class AnimeController extends Controller
         return $this->redirectToRoute('liste_article');
     }
     // Fin Article //
+
+    // Personnage //
+    public function listePersonnageAction(PersonnageService $personnageService)
+    {
+        return $this->render('@App/listePersonnage.html.twig', array("personnages" => $personnageService->getAllPersonnage()));
+    }
+
+    public function addAndUpdatePersonnageAction(Request $request, PersonnageService $personnageService, $id = null)
+    {
+        if ($id === null) {
+            $personnage = new Personnage();
+        } else {
+            $personnage = $personnageService->getPersonnage($id);
+        }
+        $form = $this->createForm(PersonnageType::class, $personnage);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $personnageService->save($personnage);
+            $this->addFlash('info', 'L\'ajout de votre personnage : "' . $personnage->getNomPersonnage() . '" à été validé');
+
+            return $this->redirectToRoute('liste_personnage');
+        }
+
+        return $this->render('@App/formulairePersonnage.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deletePersonnageAction(PersonnageService $personnageService, $id)
+    {
+        $personnageService->delete($personnageService->getPersonnage($id));
+        return $this->redirectToRoute('liste_personnage');
+    }
+    // Fin Personnage //
 }
