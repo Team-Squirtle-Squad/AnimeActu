@@ -18,13 +18,13 @@ div .Topanime {
 
 div .Carousel {
     background-color: #efb441;
-    height: 25%;
+    height: 12rem;
 }
 
 div .News {
     background-color: #fbebcd;
     height: 6rem;
-    border-bottom: 0.25rem solid white;
+    border-top: 0.25rem solid white;
 }
 
 .Icones {
@@ -32,6 +32,10 @@ div .News {
     padding-top: 0.5rem;
 }
 
+.Iconestop {
+    height: 5rem;
+    padding-top: 0.5rem;
+}
 
 .h2bloc {
     height: 3rem;
@@ -41,10 +45,37 @@ div .News {
 }
 
 .h2text {
-    font-family: Oswald;
     font-size: 1.25rem;
     font-weight: bold;
     color: #424242;
     text-align: center;
     padding-top: 0.5rem;
+}
+
+body {
+    background-color: #424242;
+    font-family: Oswald;
+    color: #424242;
+
+}
+
+.topnumero {
+    padding-top: 0.75rem;
+    padding-left: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.topnumero10 {
+    padding-top: 0.75rem;
+    padding-left: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sondage {
+    padding-top: 0.75rem;
+    text-align: center;
+    height: 20rem;
 }
