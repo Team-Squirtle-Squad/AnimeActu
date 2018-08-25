@@ -168,7 +168,7 @@ class AnimeController extends Controller
                 $anime->setCouverture($photoTmp);
             }
             $animeService->save($anime);
-            $this->addFlash('info', 'L\'ajout de votre anime : "' . $anime->getTitre() . '" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre anime : "'.$anime->getTitre().'" à été validé');
 
             return $this->redirectToRoute('liste_anime');
         }
