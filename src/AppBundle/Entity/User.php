@@ -26,7 +26,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(type="integer", options={"unsigned":true, "default":0})
+     * @ORM\Column(type="integer",nullable=true, options={"default":0})
      */
     protected $experience;
 

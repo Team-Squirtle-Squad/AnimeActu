@@ -1,59 +1,59 @@
 home:
   path: /
-  defaults: { _controller: "AppBundle:Anime:home" }
+  defaults: { _controller: "AppBundle:Site:home" }
 
 
 formulaire_genre:
   path: /redacteur/formulaireGenre
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
+  defaults: { _controller: "AppBundle:Genre:addAndUpdateGenre" }
 
 formulaire_genre_update:
   path: /redacteur/formulaireGenre/{id}
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateGenre" }
+  defaults: { _controller: "AppBundle:Genre:addAndUpdateGenre" }
 
 liste_genre:
   path: /redacteur/listeGenre
-  defaults: { _controller: "AppBundle:Anime:listeGenre" }
+  defaults: { _controller: "AppBundle:Genre:listeGenre" }
 
 delete_genre:
   path: /redacteur/deleteGenre/{id}
-  defaults: { _controller: "AppBundle:Anime:deleteGenre"}
+  defaults: { _controller: "AppBundle:Genre:deleteGenre"}
 
 
 
 formulaire_type_anime:
   path: /redacteur/formulaireTypeAnime
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateTypeAnime" }
+  defaults: { _controller: "AppBundle:TypeAnime:addAndUpdateTypeAnime" }
 
 formulaire_type_anime_update:
   path: /redacteur/formulaireTypeAnime/{id}
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateTypeAnime" }
+  defaults: { _controller: "AppBundle:TypeAnime:addAndUpdateTypeAnime" }
 
 liste_type_anime:
   path: /redacteur/listeTypeAnime
-  defaults: { _controller: "AppBundle:Anime:listeTypeAnime" }
+  defaults: { _controller: "AppBundle:TypeAnime:listeTypeAnime" }
 
 delete_type_anime:
   path: /redacteur/deleteTypeAnime/{id}
-  defaults: { _controller: "AppBundle:Anime:deleteTypeAnime" }
+  defaults: { _controller: "AppBundle:TypeAnime:deleteTypeAnime" }
 
 
 
 liste_theme:
   path: /redacteur/listeTheme
-  defaults: { _controller: "AppBundle:Anime:listeTheme" }
+  defaults: { _controller: "AppBundle:Theme:listeTheme" }
 
 formulaire_theme:
   path: /redacteur/formulaireTheme
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
+  defaults: { _controller: "AppBundle:Theme:addAndUpdateTheme" }
 
 formulaire_theme_update:
   path: /redacteur/formulaireTheme/{id}
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateTheme" }
+  defaults: { _controller: "AppBundle:Theme:addAndUpdateTheme" }
 
 delete_theme:
   path: /redacteur/deleteTheme/{id}
-  defaults: { _controller: "AppBundle:Anime:deleteTheme" }
+  defaults: { _controller: "AppBundle:Theme:deleteTheme" }
 
 
 
@@ -77,34 +77,69 @@ delete_Anime:
 
 liste_saison:
   path: /redacteur/listeSaison
-  defaults: { _controller: "AppBundle:Anime:listeSaison" }
+  defaults: { _controller: "AppBundle:Saison:listeSaison" }
 
 formulaire_saison:
   path: /redacteur/formulaireSaison
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateSaison" }
+  defaults: { _controller: "AppBundle:Saison:addAndUpdateSaison" }
 
 formulaire_saison_update:
   path: /redacteur/formulaireSaison/{id}
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateSaison" }
+  defaults: { _controller: "AppBundle:Saison:addAndUpdateSaison" }
 
 delete_Saison:
   path: /redacteur/deleteSaison/{id}
-  defaults: { _controller: "AppBundle:Anime:deleteSaison" }
+  defaults: { _controller: "AppBundle:Saison:deleteSaison" }
 
 
 
 liste_episode:
   path: /redacteur/listeEpisode
-  defaults: { _controller: "AppBundle:Anime:listeEpisode" }
+  defaults: { _controller: "AppBundle:Episode:listeEpisode" }
 
 formulaire_episode:
   path: /redacteur/formulaireEpisode
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateEpisode" }
+  defaults: { _controller: "AppBundle:Episode:addAndUpdateEpisode" }
 
 formulaire_episode_update:
   path: /redacteur/formulaireEpisode/{id}
-  defaults: { _controller: "AppBundle:Anime:addAndUpdateEpisode" }
+  defaults: { _controller: "AppBundle:Episode:addAndUpdateEpisode" }
 
 delete_Episode:
   path: /redacteur/deleteEpisode/{id}
-  defaults: { _controller: "AppBundle:Anime:deleteEpisode" }
+  defaults: { _controller: "AppBundle:Episode:deleteEpisode" }
+
+
+liste_article:
+  path: /listeArticle
+  defaults: { _controller: "AppBundle:Article:listeArticle" }
+
+formulaire_article:
+  path: /formulaireArticle
+  defaults: { _controller: "AppBundle:Article:addAndUpdateArticle" }
+
+formulaire_article_update:
+  path: /formulaireArticle/{id}
+  defaults: { _controller: "AppBundle:Article:addAndUpdateArticle" }
+
+delete_Article:
+  path: /deleteArticle/{id}
+  defaults: { _controller: "AppBundle:Article:deleteArticle" }
+
+
+
+liste_personnage:
+  path: /listePersonnage
+  defaults: { _controller: "AppBundle:Personnage:listePersonnage" }
+
+formulaire_personnage:
+  path: /formulairePersonnage
+  defaults: { _controller: "AppBundle:Personnage:addAndUpdatePersonnage" }
+
+formulaire_personnage_update:
+   path: /formulairePersonnage/{id}
+   defaults: { _controller: "AppBundle:Personnage:addAndUpdatePersonnage" }
+
+delete_personnage:
+  path: /deletePersonnage/{id}
+  defaults: { _controller: "AppBundle:Personnage:deletePersonnage" }

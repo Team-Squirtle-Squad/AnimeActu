@@ -26,15 +26,34 @@ class EpisodeType extends AbstractType
     {
 
         $builder
-            ->add('saisons', EntityType::class, array(
-                'class' => Saison::class,
-                'choice_label' => 'id',
-                'multiple' => false,
-                'expanded' => true))
-            ->add('numEpisode', IntegerType::class, [
-                'label' => 'numEpisode'])
-            ->add('TitreEpisode', TextType::class, [
-                'label' => 'TitreEpisode']);
+            ->add(
+                'saisons',
+                EntityType::class,
+                array(
+                    'choices' => array(
+                        'test' => array(
+                            'class' => Saison::class,
+                            'choice_label' => 'nbSaison',
+                            'multiple' => false,
+                            'expanded' => true,
+                        ),
+                    ),
+                )
+            )
+            ->add(
+                'numEpisode',
+                IntegerType::class,
+                [
+                    'label' => 'numEpisode',
+                ]
+            )
+            ->add(
+                'TitreEpisode',
+                TextType::class,
+                [
+                    'label' => 'TitreEpisode',
+                ]
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)
