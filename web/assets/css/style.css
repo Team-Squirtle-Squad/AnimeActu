@@ -18,7 +18,7 @@ div .Topanime {
 
 div .Carousel {
     background-color: #efb441;
-    height: 12rem;
+    height: 18rem;
 }
 
 div .News {
@@ -51,11 +51,26 @@ div .News {
     padding-top: 0.5rem;
 }
 
-body {
-    /*background-color: #424242;*/
-    font-family: Oswald;
-    color: #424242;
+.homefooter {
+    background-color: #efb441;
+    border-bottom: 0.25rem solid white;
+    height: 5rem;
 }
+
+.homefootertext {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #424242;
+    text-align: center;
+    padding-top: 1.75rem;
+}
+
+body {
+    font-family: Oswald;
+    background-image: url("fond.png");
+    background-size: 75rem;
+    background-attachment: fixed;
+    color: #424242;
 
 .topnumero {
     padding-top: 0.75rem;
@@ -77,3 +92,11 @@ body {
     text-align: center;
     height: 20rem;
 }
+
+.carouseltext {
+    color: #424242;
+    font-weight: bold;
+    text-shadow: 0rem 0rem 0.5rem white;
+}
+
+
