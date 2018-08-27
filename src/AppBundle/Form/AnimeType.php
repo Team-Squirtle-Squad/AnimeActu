@@ -27,7 +27,8 @@ class AnimeType extends AbstractType
             ->add('synopsis', TextType::class, [
                 'label' => 'Synopsis'])
             ->add('couverture', FileType::class,[
-                'label' => 'Couverture'])
+                'label' => 'Couverture',
+                'required' => false,])
             ->add('genres', EntityType::class, array(
                 'class'=>Genre::class,
                 'choice_label'=>'libelle_genre',
