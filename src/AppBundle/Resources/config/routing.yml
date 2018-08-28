@@ -7,6 +7,10 @@ anime:
   path: /anime
   defaults: { _controller: "AppBundle:Site:anime" }
 
+description_anime:
+  path: /anime/{id}
+  defaults: { _controller: "AppBundle:Anime:descriptionAnime" }
+
 
 formulaire_genre:
   path: /redacteur/formulaireGenre

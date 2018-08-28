@@ -63,7 +63,7 @@ class AnimeController extends Controller
                 $anime->setCouverture($photoTmp);
             }
             $animeService->save($anime);
-            $this->addFlash('info', 'L\'ajout de votre anime : "'.$anime->getTitre().'" à été validé');
+            $this->addFlash('info', 'L\'ajout de votre anime : "' . $anime->getTitre() . '" à été validé');
 
             return $this->redirectToRoute('liste_anime');
         }
@@ -77,6 +77,11 @@ class AnimeController extends Controller
         unlink($this->getParameter('images_directory') . "/" . $anime->getCouverture());
         $animeService->delete($animeService->getAnime($id));
         return $this->redirectToRoute('liste_anime');
+    }
+
+    public function descriptionAnimeAction(AnimeService $animeService, $id)
+    {
+        return $this->render('@App/anime.html.twig', array("animes" => $animeService->getAnime($id)));
     }
 
 }
