@@ -10,4 +10,10 @@ class SiteController extends Controller
     {
         return $this->render('@App/home.html.twig');
     }
+
+
+    public function animeAction()
+    {
+        return $this->render('@App/anime.html.twig');
+    }
 }

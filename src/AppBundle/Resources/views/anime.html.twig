@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-12 Carousel">
+            <div class="col-12 Carousel noPadding">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -46,31 +46,82 @@
             </div>
         </div>
         <div class="row justify-content-md-center">
-            <div class="col-md-9 h2bloc" style="border-right: solid 3px #FFF"><h2 class="h2text">DERNIÈRES NEWS</h2>
-                {% for i in 1..10 %}
-
-                <div class="row News">
-                    <div class="col-md-2"><img class="Icones" src={{ asset('assets/images/miniature.png') }}></div>
-                    <div class="col-md-4">Nom, résumé et date</div>
-                    <div class="col-md-2"><img class="Icones" src={{ asset('assets/images/miniature.png') }}></div>
-                    <div class="col-md-4">Nom, résumé et date</div>
+            <div class="col-md-9" style="border-right: solid 3px #FFF">
+                <div class="row h2bloc">
+                    <h2 class="h2text">NOM DE L'ANIME</h2>
                 </div>
-                {% endfor %}
 
+                <div class="row anime1">
+                    <div class="col-md-3"><img class="miniatureanime"
+                                               src={{ asset('assets/images/miniatureanime.png') }}></div>
+                    <div class="col-md-9">
+                        <div class="row anime2">
+                            Type -
+                            <div class="anime3">Hentai</div>
+                        </div>
+                        <div class="row anime2">
+                            Genre -
+                            <div class="anime3">Fantastique, pronographie, science-fiction</div>
+                        </div>
+                        <div class="row anime2">
+                            Thèmes -
+                            <div class="anime3">Inceste, suicide, trahison</div>
+                        </div>
+                        <br>
+                        <div class="row anime2">
+                            Note des spectateurs -
+                            <div class="anime3">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="row anime2">
+                            Note de la rédaction -
+                            <div class="anime3">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <br>
+                        <div class="row anime2">
+                            Studio d'animation -
+                            <div class="anime3">Toei Animation</div>
+                        </div>
+                        <div class="row anime2">
+                            Chaîne de diffusion -
+                            <div class="anime3">Fuji TV</div>
+                        </div>
+                        <div class="row anime2">
+                            1ère diffusion -
+                            <div class="anime3">01/01/1999</div>
+                        </div>
+                        <div class="row anime2">
+                            Nombre d'épisodes -
+                            <div class="anime3">100</div>
+                        </div>
+                        <br>
+                        <div class="row anime2">
+                            Synopsis -
+                            <br/>
+                            <div class="anime3-1">Un gang de trois cambrioleuses particulièrement sexy sévit sur Paris.
+                                Leur dernier coup, le cambriolage du château de Moulinsart.
+                                Une femme, alors suspectée par la police d'être la tête pensante de ce trio, est
+                                interrogée sur ses affaires et sur celle de ses amis.
+                                L'enquête ne mènera toutefois à rien et finalement la plainte sera retirée sous
+                                certaines conditions...
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-            <div class="col-md-3 h2bloc"><h2 class="h2text">TOP 10</h2>
+            <div class="col-md-3 h2bloc"><h2 class="h2text">CONTENU LIÉ</h2>
                 {% for i in 1..10 %}
-                <div class="row News">
-                    <div class="col-md-3 topnumero">#{{ i }}</div>
-                    <div class="col-md-5"><img class="Iconestop" src={{ asset('assets/images/top.png') }}></div>
-                    <div class="col-md-4">Nom et note</div>
-                </div>
+                    <div class="row News">
+                        <div class="col-md-6"><img class="Icones" src={{ asset('assets/images/miniature.png') }}></div>
+                        <div class="col-md-6">Nom et date</div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
         <div class="row justify-content-md-center">
-            <div class="col-md-12 homefooter" style="border-right: solid 3px #FFF"><h2 class="homefootertext">Copyright © 2018 Kevin Git, Tomy Nguyen & Maxence Gumiero. Tous droits réservés.</h2></div>
+            <div class="col-md-12 homefooter" style="border-right: solid 3px #FFF"><h2 class="homefootertext">Copyright
+                    ©
+                    2018 Kevin Git, Tomy Nguyen & Maxence Gumiero. Tous droits réservés.</h2></div>
         </div>
     </div>
 

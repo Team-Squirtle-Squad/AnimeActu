@@ -3,6 +3,11 @@ home:
   defaults: { _controller: "AppBundle:Site:home" }
 
 
+anime:
+  path: /anime
+  defaults: { _controller: "AppBundle:Site:anime" }
+
+
 formulaire_genre:
   path: /redacteur/formulaireGenre
   defaults: { _controller: "AppBundle:Genre:addAndUpdateGenre" }

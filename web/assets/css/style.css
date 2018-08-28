@@ -27,8 +27,38 @@ div .News {
     border-top: 0.25rem solid white;
 }
 
+div .anime1 {
+    background-color: #fbebcd;
+    height: 60rem;
+    border-top: 0.25rem solid white;
+}
+
+div .anime2 {
+    height: 2.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+div .anime3 {
+    padding-left: 0.5rem;
+    color: #222222;
+}
+
+div .anime3-1 {
+    color: #222222;
+}
+
+.noPadding{
+    padding: 0px;
+}
+
 .Icones {
     height: 5rem;
+    padding-top: 0.5rem;
+}
+
+.miniatureanime {
+    height: 20rem;
     padding-top: 0.5rem;
 }
 
@@ -40,14 +70,13 @@ div .News {
 .h2bloc {
     background-color: #efb441;
     border-top: 0.25rem solid white;
-    border-bottom: 0.25rem solid white;
+    justify-content:center;
 }
 
 .h2text {
     font-size: 1.25rem;
     font-weight: bold;
     color: #424242;
-    text-align: center;
     padding-top: 0.5rem;
 }
 
@@ -71,6 +100,7 @@ body {
     background-size: 75rem;
     background-attachment: fixed;
     color: #424242;
+}
 
 .topnumero {
     padding-top: 0.75rem;
@@ -79,6 +109,7 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
 .topnumero10 {
     padding-top: 0.75rem;
     padding-left: 1rem;
