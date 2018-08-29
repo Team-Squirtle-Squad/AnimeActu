@@ -48,24 +48,33 @@
         <div class="row justify-content-md-center">
             <div class="col-md-9" style="border-right: solid 3px #FFF">
                 <div class="row h2bloc">
-                    <h2 class="h2text">NOM DE L'ANIME</h2>
+                    <h2 class="h2text">{{ animes.titre }}</h2>
                 </div>
 
                 <div class="row anime1">
+<<<<<<< HEAD
                     <div class="col-md-4"><img class="miniatureanime img-responsive"
                                                src={{ asset('assets/images/miniatureanime.png') }}></div>
                     <div class="col-md-8">
+=======
+                    <div class="col-md-3"><img class="img-fluid img-responsive" style="width: 10rem" src="{{ asset('images/cover/') ~ animes.couverture }}"></div>
+                    <div class="col-md-9">
+>>>>>>> a0ed63a9fc03d2bd0b9f429adbe2625eddb4b4e3
                         <div class="row anime2">
                             Type -
-                            <div class="anime3">Hentai</div>
+                            <div class="anime3">{{ animes.typeAnime.libelleTypeAnime }}</div>
                         </div>
                         <div class="row anime2">
                             Genre -
-                            <div class="anime3">Fantastique, pronographie, science-fiction</div>
+                            <div class="anime3">{% for genre in animes.genres %}
+                                                {{ genre.libelleGenre ~ ' ' }}
+                                                {% endfor %}</div>
                         </div>
                         <div class="row anime2">
                             Thèmes -
-                            <div class="anime3">Inceste, suicide, trahison</div>
+                            <div class="anime3">{% for theme in animes.themes %}
+                                                {{ theme.libelleTheme ~ ' ' }}
+                                                {% endfor %}</div>
                         </div>
                         <br>
                         <div class="row anime2">
@@ -97,12 +106,7 @@
                         <div class="row anime2">
                             Synopsis -
                             <br/>
-                            <div class="anime3-1">Un gang de trois cambrioleuses particulièrement sexy sévit sur Paris.
-                                Leur dernier coup, le cambriolage du château de Moulinsart.
-                                Une femme, alors suspectée par la police d'être la tête pensante de ce trio, est
-                                interrogée sur ses affaires et sur celle de ses amis.
-                                L'enquête ne mènera toutefois à rien et finalement la plainte sera retirée sous
-                                certaines conditions...
+                            <div class="anime3-1">{{ animes.synopsis }}
                             </div>
                         </div>
                     </div>
