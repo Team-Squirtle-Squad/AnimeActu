@@ -70,8 +70,8 @@ delete_theme:
 
 
 liste_anime:
-    path: /redacteur/listeAnime
-    defaults: { _controller: "AppBundle:Anime:listeAnime" }
+  path: /redacteur/listeAnime
+  defaults: { _controller: "AppBundle:Anime:listeAnime" }
 
 formulaire_anime:
   path: /redacteur/formulaireAnime
@@ -84,6 +84,7 @@ formulaire_anime_update:
 delete_Anime:
   path: /redacteur/deleteAnime/{id}
   defaults: { _controller: "AppBundle:Anime:deleteAnime" }
+
 
 
 
@@ -155,3 +156,37 @@ formulaire_personnage_update:
 delete_personnage:
   path: /deletePersonnage/{id}
   defaults: { _controller: "AppBundle:Personnage:deletePersonnage" }
+
+
+
+liste_favoris:
+  path: /redacteur/listeFavoris
+  defaults: { _controller: "AppBundle:Anime:listeFavoris"}
+
+formulaire_favoris:
+  path: /redacteur/formulaireFavoris
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateFavoris"}
+
+formulaire_favoris_update:
+  path: /redacteur/formulaireFavoris/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateFavoris"}
+dalete_favoris:
+  path: /redacteur/deleteFavoris/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteFavoris"}
+
+
+
+liste_note:
+  path: /redacteur/listeNote
+  defaults: { _controller: "AppBundle:Anime:listeNote"}
+
+formulaire_note:
+  path: /redacteur/formulaireNote
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateNote"}
+
+formulaire_note_update:
+  path: /redacteur/formulaireNote/{id}
+  defaults: { _controller: "AppBundle:Anime:addAndUpdateNote"}
+delete_note:
+  path: /redacteur/deleteNote/{id}
+  defaults: { _controller: "AppBundle:Anime:deleteNote"}

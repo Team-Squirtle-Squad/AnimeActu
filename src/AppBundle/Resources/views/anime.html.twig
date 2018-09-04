@@ -122,6 +122,26 @@
                 {% endfor %}
             </div>
         </div>
+        <br/><br/><br/><br/><br/>
+        {% for commentaire in commentaires %}
+        {{ commentaire.message }}<br/><br/>
+        {% endfor %}
+
+
+
+
+            <div class="container" style="margin-top: 50px;">
+                {{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Enregistrer" class="btn btn-default"/>
+                {{ form_end(form) }}
+            </div>
+
+
+
+
+
+
         <div class="row justify-content-md-center">
             <div class="col-md-12 homefooter" style="border-right: solid 3px #FFF"><h2 class="homefootertext">Copyright
                     ©
