@@ -1,0 +1,32 @@
+{% extends "@App/layout.html.twig" %}
+
+{% block body %}
+
+
+    <div class="container" style="margin-top: 50px;">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Favoris</th>
+
+
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for favoris in favoriss %}
+                <tr>
+                    <td>{{ favoris.anime.titre }}</td>
+                    <td>{% if favoris.favoris %}Oui{% else %}Non{% endif%}</td>
+                    <td><a href="{{ path('formulaire_favoris_update',{id: favoris.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('dalete_favoris',{id: favoris.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('formulaire_favoris') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter</a>
+
+    </div>
+{% endblock %}

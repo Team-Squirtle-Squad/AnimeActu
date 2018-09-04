@@ -59,7 +59,6 @@ class Anime
      */
     private $typeAnime;
 
-
     /**
      * Get id
      *
@@ -237,6 +236,7 @@ class Anime
     {
         return $this->typeAnime;
     }
+
     /**
      * Constructor
      */
