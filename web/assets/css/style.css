@@ -230,9 +230,9 @@ img {
     font-size: 1.5rem;
 }
 
-/*.title-background {*/
-    /*background-image: url("title_background.png");*/
-    /*background-size: 70rem;*/
-    /*z-index: 1;*!*/
+.title-background {
+    background-image: url("title_background.png");
+    background-size: 100%;
+    z-index: 1;
 
-/*}*/
+}

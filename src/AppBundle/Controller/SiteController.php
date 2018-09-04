@@ -16,4 +16,9 @@ class SiteController extends Controller
     {
         return $this->render('@App/anime.html.twig');
     }
+
+    public function newsAction()
+    {
+        return $this->render('@App/news.html.twig');
+    }
 }

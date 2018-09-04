@@ -2,6 +2,9 @@ home:
   path: /
   defaults: { _controller: "AppBundle:Site:home" }
 
+news:
+  path: /news
+  defaults: { _controller: "AppBundle:Site:news" }
 
 anime:
   path: /anime
