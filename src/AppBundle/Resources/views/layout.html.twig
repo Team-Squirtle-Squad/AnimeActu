@@ -7,54 +7,61 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <a class="navbar-brand" href="{{ path('home') }}">AnimeActu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container">
+    <div class="row justify-content-md-center">
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="{{ path('home') }}">AnimeActu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_anime') }}">AnimeList</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_saison') }}">Saison</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_episode') }}">Episode</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_article') }}">Article</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_personnage') }}">Personnage</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_genre') }}">Genre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_theme') }}">Theme</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('liste_type_anime') }}">Type d'anime</a>
-                </li>
-                {#<li class="nav-item">#}
-                    {#<a class="nav-link" href="{{ path('fos_user_change_password') }}">changer password</a>#}
-                {#</li>#}
-                {#<li class="nav-item">#}
-                    {#<a class="nav-link" href="{{ path('fos_user_security_logout') }}">Logout</a>#}
-                {#</li>#}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('home') }}">Home <span
+                                        class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_anime') }}">AnimeList</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_saison') }}">Saison</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_episode') }}">Episode</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_article') }}">Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_personnage') }}">Personnage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_genre') }}">Genre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_theme') }}">Theme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('liste_type_anime') }}">Type d'anime</a>
+                        </li>
+                        {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('fos_user_change_password') }}">changer password</a>#}
+                        {#</li>#}
+                        {#<li class="nav-item">#}
+                        {#<a class="nav-link" href="{{ path('fos_user_security_logout') }}">Logout</a>#}
+                        {#</li>#}
 
-            </ul>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </div>
 {% endblock %}
 
 {% block body %}
