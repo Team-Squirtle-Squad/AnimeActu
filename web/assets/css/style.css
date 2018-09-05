@@ -108,9 +108,9 @@ div .anime3-1 {
 body {
     font-family: "Montserrat SemiBold";
     font-size: 75%;
-    /*background-image: url("fond.png");
+    /*background-image: url("background.png");*/
     background-size: 75rem;
-    background-attachment: fixed;//*/
+    background-attachment: fixed;
     color: #424242;
 }
 
@@ -194,6 +194,7 @@ img {
     margin-right : 0rem;
     border-radius: 0.5rem;
     /*box-shadow: 0 0rem 0.5rem #424242;*/
+    /*background-image: linear-gradient(#f7d99f, #efb441);*/
 }
 
 .title-small-first {
@@ -235,9 +236,11 @@ img {
     font-size: 1.5rem;
 }
 
-.title-background {
+/*.title-background {
     background-image: url("title_background.png");
     background-size: 100%;
-    z-index: 1;
+    z-index: 1;*/
 
+    /*color: white;
+    text-shadow: 0rem 0rem 0.5rem #424242;*/
 }
