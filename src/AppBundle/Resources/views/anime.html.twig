@@ -79,48 +79,67 @@
 
                     {#<div class="row justify-content-md-center title-small">Quelques images</div>#}
 
-                    <div class="row justify-content-md-center title-small">Images</div>
-
-                    {% for i in 1..4 %}
-
-                        <img src="{{ asset('assets/images/photo.png') }}" class="img-fluid">
-                        <br>
-                        <br>
-                    {% endfor %}
-
                 </div>
 
                 <div class="col-lg-8 col-md-8">
 
                     <div class="row justify-content-md-center title-small">Nom de l'anime</div>
 
-                    <p>Note -</p>
+                    <p>Note - 99%</p>
 
-                    <br>
+                    <p>Type - Shōnen</p>
 
-                    <p>Type -</p>
+                    <p>Genres - Action - Aventure - Comédie - Drame - Shônen - Surnaturel </p>
 
-                    <p>Genre -</p>
+                    <p>Thèmes - Arts martiaux - Combats - Ninjas</p>
 
-                    <p>Thèmes -</p>
+                    <p>Nombre d'épisodes - 72</p>
 
-                    <br>
+                    <p>Âge conseillé - 10 ans et plus</p>
 
-                    <p>Nombre de saisons -</p>
+                    <p>Studio d'animation - Studio Pierrot</p>
 
-                    <p>Nombre d'épisodes -</p>
+                    <p>Chaîne de diffusion - J-One - Game One</p>
 
-                    <br>
+                    <p>1ère diffusion - 5 avril 2017 </p>
 
-                    <p>Studio d'animation -</p>
 
-                    <p>Chaîne de diffusion -</p>
+                </div>
 
-                    <p>1ère diffusion -</p>
+                <div class="col-lg-12 col-md-12">
 
-                    <br>
+                    <p class="text-news">Depuis que son père est devenu Hokage et occupe la plus haute fonction du
+                        village de
+                        Konoha, Boruto Uzumaki, fils de Naruto Uzumaki et Hinata Hyûga, vit dans l'ombre de son père.
+                        Cherchant toujours à attirer l'attention de ce dernier, il a pris la ferme résolution de le
+                        surpasser. Mais la vie que mènent les ninjas de haute-volée est rythmée par les missions
+                        complexes et les entraînements rigoureux, il va d'ailleurs apprendre à ses dépens que devenir
+                        le meilleur ninja n'est pas une tâche aisée. En compagnie de Sarada Uchiwa, la fille de Sasuke
+                        Uchiwa et Sakura Haruno et de Mitsuki le fils d'Orochimaru, Boruto va dès lors découvrir
+                        l'univers des ninjas, ainsi que ses fondements.</p>
 
-                    <p>Synopsis -</p>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-md-center">
+
+                {% for i in 1..2 %}
+
+                    <div class="col-lg-6 col-md-6"><img src="{{ asset('assets/images/photo.png') }}"
+                                                        class="img-fluid">
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="row justify-content-md-center">
+
+                <div class="col-lg-12 col-md-12">
+
+                    <div class="row justify-content-md-center title-small">Notes</div>
 
                 </div>
 
@@ -134,7 +153,7 @@
 
             <div class="row justify-content-md-center">
 
-                {% for i in 1..8 %}
+                {% for i in 1..4 %}
 
                     <div class="col-6"><img src="{{ asset('assets/images/miniature_large.png') }}"
                                             class="img-fluid">
@@ -147,7 +166,7 @@
 
             </div>
 
-            <div class="row justify-content-md-center title-small">Publicité</div>
+            <div class="row justify-content-md-center title-small">Sponsorisé</div>
             <img src="{{ asset('assets/images/miniature_pub.png') }}" class="img-fluid">
             <p>
                 <br>

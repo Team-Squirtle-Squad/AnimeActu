@@ -212,7 +212,6 @@ img {
 }
 
 .text-news {
-    font-size: 1rem;
     text-align: justify;
 }
 
@@ -234,6 +233,22 @@ img {
 .navbar-dark .navbar-brand {
     color: #424242;
     font-size: 1.5rem;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
 }
 
 /*.title-background {
