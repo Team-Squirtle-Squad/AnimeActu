@@ -13,11 +13,11 @@ div .Infos {
 }
 
 div .Top {
-    background-color: #efb441;
+    background-color: #42abee;
 }
 
 div .Topanime {
-    background-color: #efb441;
+    background-color: #42abee;
     height: 10%;
 }
 
@@ -36,7 +36,7 @@ div .News {
 }
 
 div .anime1 {
-    background-color: #fbebcd;
+    background-color: #42abee;
     height: 60rem;
     border-top: 0.25rem solid white;
 }
@@ -56,7 +56,7 @@ div .anime3-1 {
     color: #222222;
 }
 
-.noPadding{
+.noPadding {
     padding: 0px;
 }
 
@@ -76,9 +76,9 @@ div .anime3-1 {
 }
 
 .h2bloc {
-    background-color: #efb441;
+    background-color: #42abee;
     /*border-top: 0.25rem solid white;*/
-    justify-content:center;
+    justify-content: center;
 }
 
 .h2text {
@@ -92,7 +92,7 @@ div .anime3-1 {
 }
 
 .homefooter {
-    background-color: #efb441;
+    background-color: #42abee;
     border-bottom: 0.25rem solid white;
     height: 5rem;
 }
@@ -108,8 +108,8 @@ div .anime3-1 {
 body {
     font-family: "Montserrat SemiBold";
     font-size: 75%;
-    /*background-image: url("background.png");*/
-    background-size: 75rem;
+    background-image: url("background.png");
+    background-size: 100%;
     background-attachment: fixed;
     color: #424242;
 }
@@ -180,10 +180,12 @@ body {
 img {
     width: 100%;
     border-radius: 0.5rem;
+    box-shadow: 0 0rem 1rem white;
 }
 
 .title-small {
     background-color: #efb441;
+    /*background-image: linear-gradient(#a0d5f6, #42abee);*/
     height: 3rem;
     font-size: 150%;
     padding-top: 0.75rem;
@@ -191,10 +193,12 @@ img {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0rem;
-    margin-right : 0rem;
+    margin-right: 0rem;
     border-radius: 0.5rem;
-    /*box-shadow: 0 0rem 0.5rem #424242;*/
-    /*background-image: linear-gradient(#f7d99f, #efb441);*/
+    display: block;
+    box-shadow: 0 0rem 1rem white;
+    background-image: url("title_background.png");
+    background-size: 100%;
 }
 
 .title-small-first {
@@ -206,9 +210,13 @@ img {
     margin-top: 7rem;
     margin-bottom: 1rem;
     margin-left: 0rem;
-    margin-right : 0rem;
+    margin-right: 0rem;
     border-radius: 0.5rem;
-        /*box-shadow: 0 0rem 0.5rem #424242;*/
+    display: block;
+    box-shadow: 0 0rem 1rem white;
+    /*box-shadow: 0 0rem 0.5rem #424242;*/
+    background-image: url("title_background.png");
+    background-size: 100%;
 }
 
 .text-news {
@@ -220,8 +228,9 @@ img {
     z-index: 2;
     height: 6rem;
     width: 100%;
-    background-color: #efb441!important;
-    box-shadow: 0 0rem 2.5rem white;
+    background-color: #efb441 !important;
+    background-image: url("title_background.png");
+    box-shadow: 0 0rem 1rem white;
 
 }
 
@@ -251,11 +260,26 @@ img {
     list-style: none;
 }
 
-/*.title-background {
-    background-image: url("title_background.png");
-    background-size: 100%;
-    z-index: 1;*/
-
-    /*color: white;
-    text-shadow: 0rem 0rem 0.5rem #424242;*/
+.ma_note {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
 }
+
+.note_globale {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.note_globale {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+.note_text {
+    text-align: center;
+}
+
