@@ -6,6 +6,10 @@ news:
   path: /news
   defaults: { _controller: "AppBundle:Site:news" }
 
+profil:
+  path: /profil
+  defaults: { _controller: "AppBundle:Site:profil" }
+
 anime:
   path: /anime
   defaults: { _controller: "AppBundle:Site:anime" }

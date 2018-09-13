@@ -21,4 +21,9 @@ class SiteController extends Controller
     {
         return $this->render('@App/news.html.twig');
     }
+
+    public function profilAction()
+    {
+        return $this->render('@App/profil.html.twig');
+    }
 }
