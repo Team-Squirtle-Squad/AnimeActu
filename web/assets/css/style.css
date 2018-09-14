@@ -276,3 +276,25 @@ img {
     text-align: center;
 }
 
+.niveau {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: bold;
+
+}
+
+.experience {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+.nom_succes {
+    text-align: center;
+}
+
+.exp_succes {
+    font-size: 1rem;
+    text-align: center;
+}
