@@ -125,15 +125,53 @@
 
                 {% for i in 1..8 %}
 
-                    <div class="col-lg-6 col-md-6">
+                    {#<div class="col-lg-6 col-md-6">#}
 
-                        <p>Pseudo </p>
-                        <p>01/01/2018</p>
-                        <p class="text-news">Formidable article ou vidéo! Quelle pertinence! Quelle vivacité d'esprit!
-                            Les
-                            rédacteurs de ce site sont de véritables génies créatifs!</p>
+                    {#<p>Pseudo </p>#}
+                    {#<p>01/01/2018</p>#}
+                    {#<p class="text-news">Formidable article ou vidéo! Quelle pertinence! Quelle vivacité d'esprit!#}
+                    {#Les#}
+                    {#rédacteurs de ce site sont de véritables génies créatifs!</p>#}
+
+                    {#</div>#}
+
+                    <div class="col-lg-3 col-md-3">
+
+                        <div class="row justify-content-md-center title-small">Pseudo</div>
+
+                        <img src="{{ asset('assets/images/avatar.png') }}" class="img-fluid">
 
                     </div>
+
+                    <div class="col-lg-3 col-md-3">
+
+                        <div class="row justify-content-md-center title-small">Note</div>
+
+                        <p class="ma_note">99%</p>
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+
+                        <div class="row justify-content-md-center title-small">Critique</div>
+
+                        <p class="text-news">
+
+                            Là, imaginez que Dylan, un petit internaute, ait la bonne idée de faire la critique de cet
+                            anime, une petite critique bien écrite, intelligemment construite et surtout intéressante.
+                            Qui gagne de l’argent? Nous. Pourquoi? Car en rédigeant sa petite critique, Dylan a
+                            probablement cliqué par erreur sur une pub, ou dans le cas le moins rentable pour nous, il
+                            en a regardé plusieurs jusqu’à tomber sur cette page. Tout ça pourquoi? Les succès et les
+                            niveaux bien évidemment! Car dans sa tête, Dylan se voit déjà rédacteur de AnimeActu, alors
+                            que ce n’est qu’un petit puceau sans poils de quatorze ans qui passe ses journées à se
+                            branler sur du hentai. Va-t-on publier ses articles? Oui. Pourquoi? Car on a autre chose à
+                            foutre que de les écrire nous-même, et c’est pour ça que des gens comme Dylan existent. Pour
+                            nous rapporter de l’argent.
+
+                        </p>
+
+                    </div>
+
 
                 {% endfor %}
 
